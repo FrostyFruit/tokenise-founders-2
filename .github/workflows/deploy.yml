@@ -27,6 +27,9 @@ jobs:
           echo "Listing contents of the dist directory..."
           ls -R dist
 
+      - name: Add CNAME file
+        run: echo "build.tokenisetech.com" > dist/CNAME
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -34,3 +37,4 @@ jobs:
           publish_dir: ./dist
           cname: build.tokenisetech.com
           force_orphan: true
+
